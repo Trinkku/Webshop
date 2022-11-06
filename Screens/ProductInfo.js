@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, ScrollView, FlatList, Image, Dimensions, Button, Alert} from 'react-native'
+import { View, Text, TouchableOpacity, ScrollView, FlatList, Image, Button, Alert} from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { Items } from '../Components/Data/Database'
 import Styles, { COLOURS } from '../Styles'
@@ -8,6 +8,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 const ProductInfo = ({route,navigation}) =>  {
 const {productID} = route.params; 
+//const productID = route.params;
 
 const [product, setProduct] = useState({});
 

@@ -16,7 +16,7 @@ export default function TabNavi() {
 
   return (
 <Tab.Navigator screenOptions={{headerShown: false}}>
-  <Tab.Screen name = "test" component={StackNavi}/>
+  
   <Tab.Screen name="Home" component={HomeScreen} 
           options= {{
             tabBarIcon: ({ tintColor}) => (
@@ -30,7 +30,7 @@ export default function TabNavi() {
               <Fontisto name="world-o" size={24} />
             ),
             }}  />  
-    
+{/*     <Tab.Screen name = "test" component={StackNavi}  options={{headerShown: false}}/> */}
 </Tab.Navigator>
   )
 }
