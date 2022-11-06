@@ -35,7 +35,7 @@ export default function HomeScreen({navigation}) {
     const ProductCard = ({data}) => {
       return(
         <TouchableOpacity
-       onPress={() => navigation.navigate('Favorites'/* , {productID: data.id} */)} > 
+       onPress={() => navigation.navigate('Favorites', {productID: data.id} )} > 
           <View style={Styles.productCard}>
             <Image source={data.productImage}style={Styles.image}/>
             <Text styele={{fontSize: 16, fontWeight:'bold'}}>{productName}</Text>
