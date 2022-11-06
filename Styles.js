@@ -53,7 +53,7 @@ export default StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems:'center',
-      padding: 16,
+      padding: 18,
     },
     homeTitle:{
       marginBottom:10,

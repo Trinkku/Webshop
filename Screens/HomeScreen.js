@@ -3,7 +3,6 @@ import React, { useState, useEffect} from 'react'
 import Styles from '../Styles'
 import { COLOURS } from '../Styles'
 import { StatusBar } from 'expo-status-bar'
-import { Entypo, AntDesign } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Items } from '../Components/Data/Database'
 
