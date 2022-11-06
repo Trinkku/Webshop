@@ -1,11 +1,8 @@
 import { View, Text, TouchableOpacity, ScrollView, FlatList, Image, Dimensions, Button, Alert} from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
 import { Items } from '../Components/Data/Database'
 import Styles, { COLOURS } from '../Styles'
-import { StatusBar } from 'expo-status-bar'
 import { Ionicons } from '@expo/vector-icons';
-import MapScreen from './MapScreen'
 
 
 
@@ -14,14 +11,23 @@ const {productID} = route.params;
 
 const [product, setProduct] = useState({});
 
-
     useEffect(() => {
      const unsubscribe = navigation.addListener ('focus', () => {
         getData();
      });
-    return unsubscribe;
 
+    return unsubscribe;
     }, [navigation]);
+
+    //haetaan tuote data tuotteen id:llä
+    const getData = async () => {
+    for  (let index = 0; index < Items.length; index++) {
+       if (Items[index].id == productID) {
+          await setProduct(Items[index]);
+          return;
+           }
+      }
+    }
     
     const twoOptionAlertHandler = (navigation) => {
       //function to make two option alert
@@ -43,19 +49,10 @@ const [product, setProduct] = useState({});
     };
   
 
-    //haetaan tuote data tuotteen id:llä
-    const getData = async () => {
-        for  (let index = 0; index < Items.length; index++) {
-            if (Items[index].id == productID) {
-            await setProduct(Items[index]);
-            return;
-         }
-    }
-}
 console.log(product);
 
 
-const renderProduct = ({item,index}) => { //näyttää tuotteita indexin mukaan
+const renderProduct = ({item}) => { //näyttää tuotteita
   return (
   <View style={Styles.productCard}> 
     <Image source={item} style={{

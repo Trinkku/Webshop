@@ -4,15 +4,18 @@ import HomeScreen from './Screens/HomeScreen';
 import MapScreen from './Screens/MapScreen';
 import {Fontisto, AntDesign} from '@expo/vector-icons'
 import ProductInfo from './Screens/ProductInfo';
+import TabNavi from './Components/TabNavi'
 
-const Tab = createBottomTabNavigator();
+
+
 
 
 function App() {
   return (
     <NavigationContainer>
+      <TabNavi/>
       
-      <Tab.Navigator initialRouteName='Home' screenOptions={{headerShown: false}}>
+{/*       <Tab.Navigator initialRouteName='Home' screenOptions={{headerShown: false}}>
 
         <Tab.Screen name="Home" component={HomeScreen} 
         options= {{
@@ -42,7 +45,7 @@ function App() {
           ),
           }}  />  
        
-      </Tab.Navigator>  
+      </Tab.Navigator>   */}
 
     </NavigationContainer>
   );

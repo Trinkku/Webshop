@@ -84,7 +84,8 @@ export default StyleSheet.create({
    },
    productCard:{
     width: Dimensions.get ('window').width,
-    height: 500,
+    height: 600,
+    marginBottom: 40,
     alignItems: 'center',
     justifyContent: 'center',
     alignItems:'center'
@@ -100,7 +101,7 @@ export default StyleSheet.create({
     marginLeft:20
    },
    productDesc:{
-    ontSize: 12,
+    fontSize: 12,
    color: COLOURS.black,
     fontWeight: '400',
    letterSpacing: 1,

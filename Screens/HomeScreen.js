@@ -5,6 +5,7 @@ import { COLOURS } from '../Styles'
 import { StatusBar } from 'expo-status-bar'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Items } from '../Components/Data/Database'
+import ProductInfo from './ProductInfo'
 
 export default function HomeScreen({navigation}) {
 
@@ -33,16 +34,18 @@ export default function HomeScreen({navigation}) {
   };
 
     const ProductCard = ({data}) => {
-      return(
-        <TouchableOpacity
-       onPress={() => navigation.navigate('Favorites', {productID: data.id})} > 
-          <View style={Styles.productCard}>
-            <Image source={data.productImage}style={Styles.image}/>
-            <Text>{data.description}</Text>
-          </View>
-        </TouchableOpacity>
-      )
-    }
+    return (
+      <TouchableOpacity
+        onPress={() =>  navigation.navigate('ProductInfo', { productID: data.id })}>
+        <View style={Styles.productCard}>
+          <Image source={data.productImage} style={Styles.image} />
+          <Text style= {{ fontSize: 12, fontWeight: 'bold',}}>{data.productName}</Text>
+          <Text>{data.description}</Text>
+          <Text>Price: {data.ProductPrice} euros</Text>
+        </View>
+      </TouchableOpacity>
+    )
+  }
 
   return (
     <View style={Styles.homepage}>
