@@ -52,13 +52,7 @@ export default function HomeScreen({navigation}) {
      <ScrollView showsVerticalScrollIndicator={false}>
       <View style={Styles.homeHeading}>
         <TouchableOpacity>
-          <Entypo name= "shopping-bag" style={Styles.icon}/>
-        </TouchableOpacity>
-        <TouchableOpacity>
          <Text style={{fontSize: 20, fontWeight: '00', color:'#000000'}}>Le Furnitures</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <AntDesign name= "shoppingcart" style={Styles.icon}/>
         </TouchableOpacity>
        </View>
 
@@ -72,9 +66,9 @@ export default function HomeScreen({navigation}) {
           marginLeft:10, 
           color: COLOURS.black,
           letterSpacing:1,
-        }}>Tuote</Text>
+        }}></Text>
        
-        <Text style={{color:COLOURS.blue}}>Tuote</Text>
+    
       </View>
       <View>
         {

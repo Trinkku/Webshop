@@ -14,7 +14,6 @@ const {productID} = route.params;
 
 const [product, setProduct] = useState({});
 
-const width =  Dimensions.get ('window').width
 
     useEffect(() => {
      const unsubscribe = navigation.addListener ('focus', () => {
@@ -24,14 +23,14 @@ const width =  Dimensions.get ('window').width
 
     }, [navigation]);
     
-    const twoOptionAlertHandler = () => {
+    const twoOptionAlertHandler = (navigation) => {
       //function to make two option alert
       Alert.alert(
         'Thankyou for your interest',
         //body
         'You can check this product from our stores by clicking map',
         [
-          { text: 'Map', onPress: () => navigation.navigate('map') },
+          { text: 'Map', onPress: () => navigation.navigate('Map') }, 
           {
             text: 'Cancel',
             onPress: () => console.log('No Pressed'),
@@ -43,6 +42,7 @@ const width =  Dimensions.get ('window').width
       );
     };
   
+
     //haetaan tuote data tuotteen id:llä
     const getData = async () => {
         for  (let index = 0; index < Items.length; index++) {
@@ -67,6 +67,8 @@ const renderProduct = ({item,index}) => { //näyttää tuotteita indexin mukaan
   )
 };
 
+
+
   return (
     <View>
       <ScrollView>
@@ -74,7 +76,9 @@ const renderProduct = ({item,index}) => { //näyttää tuotteita indexin mukaan
 
           <View style={{width:'100%', flexDirection: 'row', justifyContent:'space-between', paddingTop:16, paddingLeft: 16}}>
             <TouchableOpacity>
-            <Ionicons name="chevron-back-outline" style={Styles.icon}/>
+            <Ionicons name="chevron-back-outline" style={Styles.icon}
+                onPress={() => navigation.navigate('Home')} 
+            />
     
             </TouchableOpacity>
           </View>
@@ -97,7 +101,7 @@ const renderProduct = ({item,index}) => { //näyttää tuotteita indexin mukaan
       <View>
       <Button
           title="Where to find"
-          onPress={twoOptionAlertHandler}
+          onPress={() => twoOptionAlertHandler(navigation)}
         />
       </View>
  

@@ -51,7 +51,8 @@ export default StyleSheet.create({
     homeHeading:{
       width: '100%',
       flexDirection: 'row',
-      justifyContent: 'space-between',
+      justifyContent: 'center',
+      alignItems:'center',
       padding: 16,
     },
     homeTitle:{
