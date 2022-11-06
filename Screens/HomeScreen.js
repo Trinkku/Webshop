@@ -38,7 +38,9 @@ export default function HomeScreen({navigation}) {
        onPress={() => navigation.navigate('Favorites', {productID: data.id})} > 
           <View style={Styles.productCard}>
             <Image source={data.productImage}style={Styles.image}/>
+            <Text styele={{fontSize: 16, fontWeight:'bold'}}>{productName}</Text>
             <Text>{data.description}</Text>
+            <Text>Price: {data.ProductPrice}</Text>
           </View>
         </TouchableOpacity>
       )
